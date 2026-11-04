@@ -3,3 +3,35 @@
 @media(max-width:1000px){.wrap{padding-left:32px;padding-right:32px}.hero{gap:32px}.hero-art{height:490px;padding:40px}h1{letter-spacing:-2.6px}.service-grid{grid-template-columns:repeat(2,1fr)}.service{min-height:310px}.contact-grid{gap:45px}.contact h2{font-size:47px}.steps{gap:20px}}
 @media(max-width:650px){.wrap{padding-left:22px;padding-right:22px}.header{height:83px;gap:10px}.brand{font-size:25px}.brand img{width:33px;height:33px}.header nav{display:none}.small-link{font-size:11px}.small-link span{margin-left:4px}.hero{grid-template-columns:1fr;padding-top:30px;padding-bottom:45px;gap:37px}h1{font-size:56px;letter-spacing:-2.7px}.hero .eyebrow{font-size:8px;margin-bottom:24px}.lead{font-size:14px}.actions{gap:19px}.button{font-size:12px}.hero-art{margin-left:13px;height:470px;padding:40px 48px}.floating-tag{left:-13px;bottom:65px;font-size:11px}.hero-note{margin-bottom:0}.ticker{justify-content:flex-start;gap:25px;font-size:9px}.section{padding-top:60px;padding-bottom:55px}.eyebrow{font-size:8px;letter-spacing:1.2px}.aside{font-size:10px}.section-top{gap:14px}h2{font-size:36px;letter-spacing:-1.4px;margin-bottom:30px}.service-grid{gap:10px}.service{padding:20px 15px;min-height:325px}.service h3{font-size:21px}.service p{font-size:11px}.service a{font-size:10px}.mini{font-size:6px;letter-spacing:.5px}.num{margin-bottom:25px}.work-grid{grid-template-columns:1fr;gap:30px}.work-image{aspect-ratio:4/4.7}.work h3{font-size:17px}.work p{font-size:12px}.badge{font-size:8px}.steps{grid-template-columns:1fr 1fr;gap:25px}.steps span{font-size:34px}.steps h3{font-size:14px}.steps p{font-size:11px}summary{font-size:14px;align-items:flex-start;gap:12px}summary strong{font-size:12px}summary b{margin-left:7px}.price-content{grid-template-columns:1fr;gap:10px;font-size:12px}.faq{padding-top:10px}.faq summary{font-size:14px}.contact{padding:55px 0}.contact-grid{grid-template-columns:1fr;gap:24px}.contact h2{font-size:48px}.contact form{padding-top:0}footer{flex-wrap:wrap;padding-top:28px!important;padding-bottom:28px!important;gap:14px}footer p{order:3;width:100%;font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Two identical groups make a seamless loop at every screen width. */
+.ticker {
+  display: block;
+  padding: 20px 0;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 75s linear infinite;
+}
+.ticker-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+}
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 650px) {
+  .ticker-group { gap: 30px; padding-right: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; width: 100%; }
+  .ticker-group { flex-wrap: wrap; justify-content: center; gap: 12px 20px; padding: 0 16px; }
+  .ticker-group > :nth-child(n+11), .ticker-group + .ticker-group { display: none; }
+}
