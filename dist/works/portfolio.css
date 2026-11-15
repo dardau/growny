@@ -25,3 +25,9 @@
 @media (max-width: 470px) {
   .portfolio-grid { grid-template-columns: 1fr; }
 }
+
+.portfolio-card { scroll-margin-top: 30px; }
+.portfolio-card:target .portfolio-poster { outline: 3px solid var(--pink); outline-offset: 4px; }
+.portfolio-poster { aspect-ratio: 16 / 10; background: var(--ink); }
+#player { width: min(920px, 95vw); }
+#video-frame iframe { height: min(65dvh, 510px); background: var(--ink); }
