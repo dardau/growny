@@ -20,28 +20,22 @@ const title = document.querySelector('#player-title');
 const sourceLink = document.querySelector('#source-link');
 
 if (typeof player.showModal === 'function') {
-  for (const link of document.querySelectorAll('[data-preview], [data-video]')) {
+  for (const link of document.querySelectorAll('[data-video]')) {
     link.addEventListener('click', (event) => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       title.textContent = link.closest('article').querySelector('h2').textContent;
       sourceLink.href = link.href;
-      const { video, preview } = link.dataset;
-      sourceLink.hidden = Boolean(video && new URL(video, location.href).href === link.href);
-      const embed = document.createElement(video ? 'video' : 'iframe');
-      if (video) {
-        embed.controls = true;
-        embed.playsInline = true;
-        embed.preload = 'metadata';
-        embed.poster = link.querySelector('img').src;
-        embed.setAttribute('aria-label', title.textContent);
-        embed.src = video;
-      } else {
-        embed.title = title.textContent;
-        embed.src = preview;
-        embed.allowFullscreen = true;
-      }
-      frame.replaceChildren(embed);
+      const { video } = link.dataset;
+      sourceLink.hidden = new URL(video, location.href).href === link.href;
+      const movie = document.createElement('video');
+      movie.controls = true;
+      movie.playsInline = true;
+      movie.preload = 'metadata';
+      movie.poster = link.querySelector('img').src;
+      movie.setAttribute('aria-label', title.textContent);
+      movie.src = video;
+      frame.replaceChildren(movie);
       player.showModal();
     });
   }
