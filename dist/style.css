@@ -35,3 +35,5 @@
   .ticker-group { flex-wrap: wrap; justify-content: center; gap: 12px 20px; padding: 0 16px; }
   .ticker-group > :nth-child(n+11), .ticker-group + .ticker-group { display: none; }
 }
+
+.portfolio-more { margin: 28px 0 0; }

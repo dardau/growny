@@ -1,4 +1,14 @@
 const format = document.getElementById('format');
+const portfolioParams = new URLSearchParams(location.search);
+const referenceWork = portfolioParams.get('work')?.trim().slice(0, 100);
+const referenceFormat = portfolioParams.get('format');
+
+if (referenceWork) {
+  document.getElementById('idea').value = 'Хочу похожее на «' + referenceWork + '».';
+  if (Array.from(format.options).some(option => option.value === referenceFormat)) {
+    format.value = referenceFormat;
+  }
+}
 for (const link of document.querySelectorAll('[data-service]')) {
   link.addEventListener('click', () => { format.value = link.dataset.service; });
 }
