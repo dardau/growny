@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/works/portfolio.css?v=6">
+<link rel="stylesheet" href="/works/portfolio.css?v=7">
 <script defer src="/works/drive-portfolio.js?v=6"></script>
 </head>
 <body>
@@ -23,7 +23,13 @@
     <p class="portfolio-kicker">Growny Studio <span></span> Портфолио</p>
     <h1>Истории <em>в кадре.</em></h1>
     <p class="portfolio-intro">Персональные мультфильмы, Love Story и фильмы для важных событий.</p>
-    <div class="studio-founders" aria-label="Основатели студии"><span><strong>Dariya</strong><small>Founder</small></span><span><strong>Kamila</strong><small>Co-founder</small></span></div>
+    <section class="studio-team" aria-labelledby="team-heading">
+      <div class="studio-team-heading"><p class="portfolio-kicker">Люди за кадром</p><h2 id="team-heading">Создатели Growny</h2></div>
+      <div class="studio-founders">
+        <article class="founder-card"><img src="/works/founder-dariya.webp" alt="3D-персонаж Дарии в чёрном костюме с изумрудными деталями" width="550" height="670"><div><small>Founder</small><strong>Dariya</strong></div></article>
+        <article class="founder-card"><img src="/works/founder-kamila.webp" alt="3D-персонаж Камилы в бежевом плаще" width="265" height="350"><div><small>Co-founder</small><strong>Kamila</strong></div></article>
+      </div>
+    </section>
     <nav class="portfolio-jumps" aria-label="Разделы портфолио">
       <a href="#reels">Reels с просмотрами <span aria-hidden="true">↓</span></a>
       <a href="#films">Все фильмы <span aria-hidden="true">↓</span></a>

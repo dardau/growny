@@ -97,4 +97,12 @@ body:has(.portfolio) > .header { height: 82px; }
   html:has(.portfolio) { scroll-behavior: auto; }
 }
 
-.studio-founders{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}.studio-founders span{display:flex;align-items:baseline;gap:9px;padding:9px 15px;border:1px solid rgba(65,48,56,.15);border-radius:999px;background:rgba(255,255,255,.62)}.studio-founders strong{font-size:14px}.studio-founders small{font-size:11px;letter-spacing:.04em;opacity:.65}
+ .studio-team { margin: 34px 0 26px; }
+.studio-team-heading h2 { margin: 0 0 16px; font-size: clamp(23px, 3vw, 32px); letter-spacing: -.045em; }
+.studio-founders { display: flex; flex-wrap: wrap; gap: 12px; }
+.founder-card { display: flex; align-items: center; gap: 14px; width: min(250px, 100%); padding: 9px; border: 1px solid #e2d4d8; border-radius: 14px; background: #faf2f6; }
+.founder-card img { display: block; width: 78px; height: 92px; object-fit: cover; border-radius: 8px; background: #e6d8dc; }
+.founder-card div { display: grid; gap: 5px; }
+.founder-card small { color: #756571; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.founder-card strong { color: #251722; font-size: 19px; letter-spacing: -.035em; }
+@media (max-width: 470px) { .studio-founders { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .founder-card { width: 100%; flex-direction: column; align-items: stretch; gap: 8px; } .founder-card img { width: 100%; height: 130px; } .founder-card div { padding: 0 3px 4px; } }
