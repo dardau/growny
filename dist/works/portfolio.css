@@ -96,3 +96,5 @@ body:has(.portfolio) > .header { height: 82px; }
 @media (prefers-reduced-motion: reduce) {
   html:has(.portfolio) { scroll-behavior: auto; }
 }
+
+.studio-founders{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}.studio-founders span{display:flex;align-items:baseline;gap:9px;padding:9px 15px;border:1px solid rgba(65,48,56,.15);border-radius:999px;background:rgba(255,255,255,.62)}.studio-founders strong{font-size:14px}.studio-founders small{font-size:11px;letter-spacing:.04em;opacity:.65}
